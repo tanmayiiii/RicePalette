@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rice Type Detection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; }
+
+    nav {
+      background: #111;
+      color: white;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+    nav ul li {
+      cursor: pointer;
+      color: white;
+    }
+
+    .hero {
+      background: url('https://i.imgur.com/YuDdWjH.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding-top: 60px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      text-shadow: 1px 1px 4px black;
+    }
+    .hero p {
+      margin: 20px 0;
+      font-size: 20px;
+      text-shadow: 1px 1px 3px black;
+    }
+    .hero a {
+      padding: 10px 25px;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 5px;
+    }
+
+    section {
+      padding: 60px 80px;
+    }
+
+    .about {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    .about img {
+      width: 50%;
+      border-radius: 8px;
+    }
+    .about-text h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .grid-item {
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .contact {
+      text-align: center;
+    }
+    .contact h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #28a745;
+    }
+    .contact-boxes {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .contact-box {
+      background: #f9f9f9;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      margin: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    form input, form textarea {
+      padding: 10px;
+      width: 45%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form textarea {
+      width: 94%;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div><strong>RICE TYPE DETECTION</strong></div>
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Testimonials</li>
+      <li>Contact</li>
+      <li>Predict</li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to Rice Type Detection</h1>
+    <p>This model can detect rice type based on rice images.</p>
+    <a href="{{ url_for('details') }}">Predict</a>
+
+  </section>
+
+  <!-- About Section -->
+  <section>
+    <div class="about">
+      <img src="https://i.imgur.com/X1m3uXj.jpg" alt="Rice Field">
+      <div class="about-text">
+        <h2>About the Rice Type Classification Model</h2>
+        <p>This model is built using Convolutional Neural Networks and trained on labeled images of rice. It classifies rice into 5 types using deep learning.</p>
+        <div class="grid">
+          <div class="grid-item"><strong>✅ Accuracy of the Model</strong><br>The model gives 97% correct predictions.</div>
+          <div class="grid-item"><strong>✅ Different Types of Rice</strong><br>Supports classification of 5 varieties.</div>
+          <div class="grid-item"><strong>✅ Dataset Used</strong><br>Images from open-source Kaggle dataset.</div>
+          <div class="grid-item"><strong>✅ Technical Architecture</strong><br>Built on MobileNetV2 using Transfer Learning.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>CONTACT US</h2>
+    <div class="contact-boxes">
+      <div class="contact-box"><strong>📍 Our Address</strong><br>A108 Adam Street, Pune, India</div>
+      <div class="contact-box"><strong>📧 Email Us</strong><br>info@example.com<br>contact@example.com</div>
+      <div class="contact-box"><strong>📞 Call Us</strong><br>+91 55892 55488<br>+91 66782 25444</div>
+    </div>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="text" placeholder="Subject" required>
+      <textarea placeholder="Your Message" required></textarea>
+    </form>
+  </section>
+
+</body>
+</html>

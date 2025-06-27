@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Rice Image</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px;
+    }
+    h2 {
+      margin-bottom: 30px;
+      color: #333;
+    }
+    form {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    input[type="file"] {
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    input[type="submit"] {
+      background-color: #28a745;
+
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Upload an Image to Predict Rice Type</h2>
+  <form action="/predict" method="post" enctype="multipart/form-data">
+    <input type="file" name="image" required>
+    <input type="submit" value="Predict">
+</form>
+
+
+</body>
+</html>
